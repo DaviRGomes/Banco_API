@@ -12,6 +12,12 @@ target/
 .settings
 .springBeans
 .sts4-cache
+<<<<<<< HEAD
+=======
+.gitattributes
+mvnw.cmd
+mvnw
+>>>>>>> efd5b80 (Add entities)
 
 ### IntelliJ IDEA ###
 .idea
