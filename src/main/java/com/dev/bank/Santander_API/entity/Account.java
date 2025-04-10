@@ -1,5 +1,6 @@
 package com.dev.bank.Santander_API.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +25,10 @@ public class Account {
 
     @Column(name = "additional_limit", precision = 13, scale = 2)
     private BigDecimal limit;
+
+    @OneToOne(mappedBy = "account")
+    @JsonBackReference
+    private User user;
 
 
 }

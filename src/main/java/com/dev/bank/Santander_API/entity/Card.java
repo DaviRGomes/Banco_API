@@ -1,6 +1,7 @@
 package com.dev.bank.Santander_API.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,13 +14,14 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
 
-    @Column(unique = true)
-    private String number;
+    private BigDecimal saldo;
 
-    @Column(name = "available_limit", precision = 13, scale = 2)
-    private BigDecimal limit;
+    @OneToOne(mappedBy = "card")
+    @JsonBackReference
+    private User user;
 
 
 }
